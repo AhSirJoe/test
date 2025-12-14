@@ -66,7 +66,7 @@
             <div class="flex items-center justify-between">
                 <div>
                     <h1 class="text-xl font-bold text-gray-900 leading-tight">West Coast Trek</h1>
-                    <p class="text-sm text-gray-500">Columbia Business School • Dec 15-18</p>
+                    <p class="text-sm text-gray-500">Columbia Business School • Dec 14-18</p>
                 </div>
                 <div class="h-10 w-10 bg-blue-50 rounded-full flex items-center justify-center text-blue-800">
                     <i class="fa-solid fa-mountain"></i>
@@ -78,6 +78,9 @@
         <nav class="border-t border-gray-100 bg-white">
             <div class="max-w-3xl mx-auto px-4 overflow-x-auto no-scrollbar">
                 <div class="flex space-x-8 min-w-max" id="tabs-container">
+                    <button onclick="switchTab('sun')" id="tab-sun" class="tab-inactive py-3 text-sm transition-colors duration-200">
+                        Sun, Dec 14
+                    </button>
                     <button onclick="switchTab('mon')" id="tab-mon" class="tab-active py-3 text-sm transition-colors duration-200">
                         Mon, Dec 15
                     </button>
@@ -98,6 +101,25 @@
     <!-- Main Content -->
     <main class="max-w-3xl mx-auto px-4 py-6">
         
+        <!-- SUNDAY -->
+        <div id="content-sun" class="hidden fade-in relative space-y-8">
+            <div class="timeline-line"></div>
+
+            <!-- Welcome Dinner -->
+            <div class="relative pl-12">
+                <div class="absolute left-0 top-1 h-12 w-12 bg-white border-2 border-orange-100 rounded-full flex items-center justify-center z-10 shadow-sm">
+                    <i class="fa-solid fa-utensils text-orange-500"></i>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-gray-900 text-lg">Welcome Dinner</h3>
+                        <span class="text-sm font-mono text-orange-700 bg-orange-50 px-2 py-1 rounded">7:00 - 10:00 PM</span>
+                    </div>
+                    <p class="text-gray-600 text-sm"><i class="fa-solid fa-map-pin mr-1 text-gray-400"></i> West Coast Cafe, 466 San Mateo Ave, San Bruno</p>
+                </div>
+            </div>
+        </div>
+
         <!-- MONDAY -->
         <div id="content-mon" class="fade-in relative space-y-8">
             <div class="timeline-line"></div>
@@ -611,7 +633,7 @@
     <script>
         function switchTab(day) {
             // Hide all content
-            ['mon', 'tue', 'wed', 'thu'].forEach(d => {
+            ['sun', 'mon', 'tue', 'wed', 'thu'].forEach(d => {
                 document.getElementById('content-' + d).classList.add('hidden');
                 document.getElementById('tab-' + d).classList.remove('tab-active');
                 document.getElementById('tab-' + d).classList.add('tab-inactive');
